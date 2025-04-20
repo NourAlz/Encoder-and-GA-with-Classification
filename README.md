@@ -1,9 +1,21 @@
-The code refrences are from this library: https://pytorch.org/docs/stable/nn.html
+# Files Documentations
+### idc_with_header.csv / minmax.xlsx: 
+  These are the dataset and its corresponding labels, the dataset is normalized using min-max normalization technique.
 
+### codes.ipynb:
+  This notebook has the final version of the Encoders code, along with a test of genetic algorithm combined with VAE.
 
-Requirements.txt file automatically by listing all the libraries installed in our current Python environment. (Widely accepted practice in software development and data science projects)
+### genetic.ipynb:
+  This notebook has the final version of the genetic algorithm combined with both AE and VAE.
 
+### PSO.ipynb:
+  Includes a PSO combined with classification model to compare the performance against the Encoders + GA.
 
-**Run**
+### images.ipynb: 
+  This notebook currently holds the first version of transforming spectra data into images. We will continue working on finding various method to best suit CNN.
 
-*pip install -r requirements.txt*
+### Requirements.txt: 
+  File automatically by listing all the libraries installed in our current Python environment. (Widely accepted practice in software development and data science projects)
+  
+  **Run**
+  *pip install -r requirements.txt*
