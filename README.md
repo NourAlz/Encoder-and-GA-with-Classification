@@ -20,7 +20,8 @@
 ### Requirements.txt: 
   File automatically by listing all the libraries installed in our current Python environment. (Widely accepted practice in software development and data science projects)
 
-### BGWO.ipynb optimizes the hyperparameters of the Random Forest & SVM classifiers to compare with PCA + GA
+### BGWO.ipynb 
+optimizes the hyperparameters of the Random Forest & SVM classifiers to compare with PCA + GA
  
   **Run**
   *pip install -r requirements.txt*
