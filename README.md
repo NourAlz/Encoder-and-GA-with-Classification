@@ -9,7 +9,7 @@
   This notebook has the final version of the genetic algorithm combined with both AE and VAE.
   
 ### PCA + GA.ipynb
-  PCA for dimensionality reduction, evaluates reconstruction error, trains (RF, NB, SVM) with the reduced features, and optimizes hyperparameters using Genetic Algorithms
+  PCA for dimensionality reduction, evaluates reconstruction error, trains (RF, NB, SVM) with the reduced features, and optimizes hyperparameters using Genetic Algorithm
   
 ### PSO.ipynb:
   Includes a PSO combined with classification model to compare the performance against the Encoders + GA.
@@ -24,7 +24,10 @@
   File automatically by listing all the libraries installed in our current Python environment. (Widely accepted practice in software development and data science projects)
 
 ### BGWO.ipynb 
-optimizes the hyperparameters of the Random Forest & SVM classifiers to compare with PCA + GA
+Optimizes the hyperparameters of the Random Forest & SVM classifiers to compare with our methods
+
+### GSA.ipynb 
+Optimizes the hyperparameters of the Random Forest & SVM classifiers to compare with with our methods
  
   **Run**
   *pip install -r requirements.txt*
