@@ -14,6 +14,9 @@
 ### PSO.ipynb:
   Includes a PSO combined with classification model to compare the performance against the Encoders + GA.
 
+### ABC.ipynb:
+  Implementation of Artificial Bee Colony Optimization to compare the performance against Encoders + GA. (references: https://github.com/BrianMburu/Artificial-Bee-Colony-in-python/blob/master/artificial_bee_colony.py)
+
 ### images.ipynb: 
   This notebook currently holds the first version of transforming spectra data into images. We will continue working on finding various method to best suit CNN.
 
