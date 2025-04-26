@@ -27,7 +27,7 @@
 Optimizes the hyperparameters of the Random Forest & SVM classifiers to compare with our methods
 
 ### GSA.ipynb 
-Optimizes the hyperparameters of the Random Forest & SVM classifiers to compare with with our methods
+Optimizes the hyperparameters of the Random Forest & SVM classifiers to compare with our methods
  
   **Run**
   *pip install -r requirements.txt*
