@@ -6,7 +6,10 @@
   This notebook has the final version of the Encoders code, along with a test of genetic algorithm combined with VAE.
 
 ### genetic.ipynb:
-  This notebook has the final version of the genetic algorithm combined with both AE and VAE.
+  This notebook has the first version of the genetic algorithm combined with both AE and VAE.
+
+### GA.ipynb:
+  This notebook has the final modified version of Genetic Algorithm implementation with Encoders.
   
 ### PCA + GA.ipynb
   PCA for dimensionality reduction, evaluates reconstruction error, trains (RF, NB, SVM) with the reduced features, and optimizes hyperparameters using Genetic Algorithm
