@@ -5,32 +5,29 @@
 ### codes.ipynb:
   This notebook has the final version of the Encoders code, along with a test of genetic algorithm combined with VAE.
 
-### genetic.ipynb:
-  This notebook has the first version of the genetic algorithm combined with both AE and VAE.
-
-### GA.ipynb:
-  This notebook has the final modified version of Genetic Algorithm implementation with Encoders.
+### GA folder:
+  This notebook has the final modified version of Genetic Algorithm implementation with Encoders. It also contains a separate file for running codes with RF as a fitness function.
   
-### PCA + GA.ipynb
+### PCA + GA folder:
   PCA for dimensionality reduction, evaluates reconstruction error, trains (RF, NB, SVM) with the reduced features, and optimizes hyperparameters using Genetic Algorithm
   
-### PSO.ipynb:
+### PSO folder:
   Includes a PSO combined with classification model to compare the performance against the Encoders + GA.
 
-### ABC.ipynb:
+### ABC folder:
   Implementation of Artificial Bee Colony Optimization to compare the performance against Encoders + GA. (references: https://github.com/BrianMburu/Artificial-Bee-Colony-in-python/blob/master/artificial_bee_colony.py)
 
-### images.ipynb: 
-  This notebook currently holds the first version of transforming spectra data into images. We will continue working on finding various method to best suit CNN.
+### CNN folder:
+  Contains all the test files and images that have been done so far on the CNN methods. Might be creating a separate repository for these later on.
+
+### BGWO folder:
+  Optimizes the hyperparameters of the Random Forest & SVM classifiers to compare with our methods. As well as a file for BGWO feature selection based.
+
+### GSA folder: 
+  Optimizes the hyperparameters of the Random Forest & SVM classifiers to compare with our methods
 
 ### Requirements.txt: 
   File automatically by listing all the libraries installed in our current Python environment. (Widely accepted practice in software development and data science projects)
-
-### BGWO.ipynb 
-Optimizes the hyperparameters of the Random Forest & SVM classifiers to compare with our methods
-
-### GSA.ipynb 
-Optimizes the hyperparameters of the Random Forest & SVM classifiers to compare with our methods
  
   **Run**
   *pip install -r requirements.txt*
