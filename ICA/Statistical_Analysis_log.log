@@ -1,0 +1,91 @@
+ Loading data...
+Data loaded: 443 samples x 900 features
+Wavenumber range: 500 - 4000 cm^-1
+Train: 354 samples | Test: 89 samples
+
+======================================================================
+COMPUTING TABLE 1 — Comparative diagnostics across ICA settings
+======================================================================
+
+  Fitting ICA with 12 components...
+    ICA fit done in 0.1s
+    Computing bootstrap stability...
+    Running 10 GA runs in parallel across 2 cores...
+    Done — selected 11/12 components
+
+  Fitting ICA with 32 components...
+    ICA fit done in 0.1s
+    Computing bootstrap stability...
+    Running 10 GA runs in parallel across 2 cores...
+    Done — selected 24/32 components
+
+  Fitting ICA with 53 components...
+    ICA fit done in 0.4s
+    Computing bootstrap stability...
+    Running 10 GA runs in parallel across 2 cores...
+    Done — selected 37/53 components
+
+
+======================================================================
+TABLE 1 — Comparative statistical diagnostics
+======================================================================
+Pipeline  ICs  GA Acc. (%) Macro-F1 CV Acc mean±SD  Sig. ICs (q<0.05) Mean effect size Mean |ρ| inter-IC Loading conc. Bootstrap stability  ICs kept by GA
+     ICA   12  No    88.76     0.89     82.48±3.20                 12            0.214             0.000         0.039               0.861              12
+  ICA-GA   12 Yes    91.01     0.91     82.76±2.45                 11            0.230             0.000         0.040               0.861              11
+     ICA   32  No    79.78     0.79     76.85±3.45                 25            0.091             0.000         0.040               0.704              32
+  ICA-GA   32 Yes    78.91     0.78     69.79±5.55                 21            0.107             0.000         0.040               0.704              24
+     ICA   53  No    76.40     0.75     72.31±2.31                 40            0.061             0.000         0.040               0.681              53
+  ICA-GA   53 Yes    71.91     0.71     69.77±2.79                 30            0.072             0.000         0.040               0.681              37
+
+Saved: ICA_Table1_diagnostics.csv
+
+
+======================================================================
+COMPUTING TABLE 2 — Per-component interpretation (ICA-GA, n=12)
+======================================================================
+Running GA 10 times in parallel for selection frequencies...
+    Running 10 GA runs in parallel across 2 cores...
+
+
+TABLE 2 — Interpretation of ICA components (ICA-GA, 12 components)
+* = significant after Benjamini-Hochberg correction (q < 0.05)
+======================================================================
+  IC GA sel. freq. (%) Kruskal-Wallis H q-value Effect size (η²) Spearman ρ w/ maturity          Top 5 MIR markers (cm⁻¹) Loading conc.                    Tentative interpretation
+ IC1               50%            77.00 0.0000*            0.188                  0.194 3568, 3572, 3564, 3650, 3560 cm⁻¹         0.051               O-H stretch (water, alcohols)
+ IC2               80%            51.54 0.0000*            0.113                 -0.144 1613, 1610, 1617, 1652, 1656 cm⁻¹         0.042            Amide I / C=O stretch (proteins)
+ IC3               70%            58.49 0.0000*            0.134                  0.263 3669, 3034, 3673, 3031, 3038 cm⁻¹         0.041                   Mixed / overlapping bands
+ IC4               30%            24.16 0.0324*            0.033                  0.086   609, 1209, 726, 2583, 2587 cm⁻¹         0.025                   Mixed / overlapping bands
+ IC5               40%            98.85 0.0000*            0.252                 -0.244 1174, 1263, 1267, 1177, 2879 cm⁻¹         0.039 C-O / C-C stretch (sugars, polysaccharides)
+ IC6               50%            74.19 0.0000*            0.180                 -0.205 1594, 1590, 1598, 1629, 1586 cm⁻¹         0.041          C=C / COO⁻ stretch (organic acids)
+ IC7               60%           228.81 0.0000*            0.635                 -0.238 1384, 1380, 1388, 1411, 1392 cm⁻¹         0.046           C-H bending / carboxylate stretch
+ IC8               80%           179.88 0.0000*            0.491                 -0.266 1719, 1715, 1722, 1711, 1680 cm⁻¹         0.040          C=O ester stretch (lipids, esters)
+ IC9               60%           146.91 0.0000*            0.394                  0.181 3794, 2976, 3801, 1610, 3798 cm⁻¹         0.035                   Mixed / overlapping bands
+IC10               60%            23.69 0.0341*            0.031                  0.057   2213, 3097, 3101, 776, 773 cm⁻¹         0.035                   Mixed / overlapping bands
+IC11               50%            26.34 0.0184*            0.039                 -0.057 3984, 3988, 3981, 3992, 3977 cm⁻¹         0.033                   Mixed / overlapping bands
+IC12               70%            38.57 0.0003*            0.075                  0.021 3611, 3607, 3603, 3140, 3081 cm⁻¹         0.045                   Mixed / overlapping bands
+
+Saved: ICA_Table2_component_interpretation.csv
+
+
+======================================================================
+AUTO-GENERATED INTERPRETATION PARAGRAPH
+======================================================================
+
+The superior performance of the 12-component ICA-GA model reflects a balance between
+information retention and latent compactness. Of the 12 independent components, 12
+showed statistically significant class separation across the 14 maturity levels after
+Benjamini-Hochberg correction (q < 0.05). IC7 exhibited the strongest
+discriminative power (η² = 0.635) and a Spearman correlation of
+ρ = -0.238 with the ordered maturity index, suggesting a consistent
+association with maturity progression. IC7 was primarily driven by spectral
+markers around 1384, 1380, 1388, 1411, 1392 cm⁻¹, consistent with C-H bending / carboxylate stretch. The GA stage further refined
+the latent representation by selectively retaining the most informative components;
+IC2 was selected in 80% of GA runs, confirming its stable
+discriminative contribution. Relative to the 32- and 53-component settings, the
+12-component solution avoids the inclusion of weaker, noisier, or redundant latent
+factors, thereby improving generalization and strengthening interpretability of the MIR
+spectral signatures associated with strawberry maturity.
+
+Saved: ICA_interpretation_paragraph.txt
+
+All 3 files downloaded to your computer.
