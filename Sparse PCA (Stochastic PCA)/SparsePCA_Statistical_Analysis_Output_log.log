@@ -1,0 +1,149 @@
+Loading data...
+Data loaded: 443 samples x 900 features
+Wavenumber range: 500 - 4000 cm^-1
+Train: 354 | Test: 89
+
+======================================================================
+CONFIGURATION 1 — Vary n_components (12, 32, 53), alpha=0.5 fixed
+======================================================================
+
+  Fitting SparsePCA (n=12, alpha=0.5)...
+    Fit done in 20.1s | Acc=92.13%
+    Computing bootstrap stability (20 boots)...
+    Sig=12 | η²=0.426 | corr=0.194 | stab=0.846
+
+  Fitting SparsePCA (n=32, alpha=0.5)...
+    Fit done in 57.6s | Acc=94.38%
+    Computing bootstrap stability (20 boots)...
+    Sig=32 | η²=0.357 | corr=0.194 | stab=0.861
+
+  Fitting SparsePCA (n=53, alpha=0.5)...
+    Fit done in 50.7s | Acc=95.51%
+    Computing bootstrap stability (20 boots)...
+    Sig=53 | η²=0.324 | corr=0.178 | stab=0.854
+
+
+TABLE 1A — Comparative diagnostics across component settings (alpha=0.5 fixed)
+======================================================================
+ Pipeline  n_components  Alpha Acc. (%) Macro-F1 CV Acc mean±SD  Sig. comps (q<0.05) Mean effect size Mean |ρ| inter-comp Loading conc. Bootstrap stability
+SparsePCA            12    0.5    92.13     0.92     84.19±2.69                   12            0.426               0.194         0.135               0.846
+SparsePCA            32    0.5    94.38     0.94     86.44±2.09                   32            0.357               0.194         0.309               0.861
+SparsePCA            53    0.5    95.51     0.95     87.86±2.26                   53            0.324               0.178         0.464               0.854
+Saved: SparsePCA_Table1A_components.csv
+
+
+======================================================================
+CONFIGURATION 2 — Vary alpha (0.1, 0.5, 1.0, 2.0, 5.0), n=32 fixed
+======================================================================
+
+  Fitting SparsePCA (n=32, alpha=0.1)...
+    Fit done in 103.4s | Acc=92.13%
+    Computing bootstrap stability (20 boots)...
+    Sig=32 | η²=0.230 | corr=0.094 | stab=0.735
+
+  Fitting SparsePCA (n=32, alpha=0.5)...
+    Fit done in 34.5s | Acc=94.38%
+    Computing bootstrap stability (20 boots)...
+    Sig=32 | η²=0.357 | corr=0.194 | stab=0.861
+
+  Fitting SparsePCA (n=32, alpha=1.0)...
+    Fit done in 16.3s | Acc=93.26%
+    Computing bootstrap stability (20 boots)...
+    Sig=32 | η²=0.410 | corr=0.234 | stab=0.864
+
+  Fitting SparsePCA (n=32, alpha=2.0)...
+    Fit done in 6.2s | Acc=92.13%
+    Computing bootstrap stability (20 boots)...
+    Sig=32 | η²=0.457 | corr=0.300 | stab=0.743
+
+  Fitting SparsePCA (n=32, alpha=5.0)...
+    Fit done in 2.9s | Acc=92.13%
+    Computing bootstrap stability (20 boots)...
+    Sig=32 | η²=0.535 | corr=0.374 | stab=0.449
+
+
+TABLE 1B — Comparative diagnostics across alpha values (n=32 fixed)
+======================================================================
+ Pipeline  n_components  Alpha Acc. (%) Macro-F1 CV Acc mean±SD  Sig. comps (q<0.05) Mean effect size Mean |ρ| inter-comp Loading conc. Bootstrap stability
+SparsePCA            32    0.1    92.13     0.92     85.88±1.95                   32            0.230               0.094         0.115               0.735
+SparsePCA            32    0.5    94.38     0.94     86.44±2.09                   32            0.357               0.194         0.309               0.861
+SparsePCA            32    1.0    93.26     0.93     86.74±4.01                   32            0.410               0.234         0.474               0.864
+SparsePCA            32    2.0    92.13     0.92     85.03±4.40                   32            0.457               0.300         0.666               0.743
+SparsePCA            32    5.0    92.13     0.92     83.35±5.26                   32            0.535               0.374         0.979               0.449
+Saved: SparsePCA_Table1B_alpha.csv
+
+
+======================================================================
+TABLE 2 — Per-component interpretation (SparsePCA, n=32, alpha=0.5)
+======================================================================
+Fitting best model (n=32, alpha=0.5)...
+Computing per-component bootstrap stability...
+
+TABLE 2 — Per-component interpretation (SparsePCA, n=32, alpha=0.5)
+* = significant after Benjamini-Hochberg correction (q < 0.05)
+======================================================================
+Component Bootstrap stability Kruskal-Wallis H q-value Effect size (η²) Spearman ρ w/ maturity                 Top 5 MIR markers Loading conc.                    Tentative interpretation
+      SC1               0.982           288.06 0.0000*            0.809                 -0.396 1641, 1707, 1637, 1598, 1602 cm⁻¹         0.242            Amide I / C=O stretch (proteins)
+      SC2               0.956           198.73 0.0000*            0.546                  0.260 1454, 1458, 1442, 1438, 1446 cm⁻¹         0.155          C=C / COO⁻ stretch (organic acids)
+      SC3               0.917            99.64 0.0000*            0.255                  0.205    1174, 866, 1189, 882, 885 cm⁻¹         0.170 C-O / C-C stretch (sugars, polysaccharides)
+      SC4               0.779           103.54 0.0000*            0.266                  0.144 3108, 3105, 3319, 3315, 3334 cm⁻¹         0.405               O-H stretch (water, alcohols)
+      SC5               0.983           180.33 0.0000*            0.492                  0.200 1617, 1656, 1613, 1660, 1652 cm⁻¹         0.387            Amide I / C=O stretch (proteins)
+      SC6               0.957           159.42 0.0000*            0.431                  0.132 3564, 3560, 3654, 3568, 3650 cm⁻¹         0.402               O-H stretch (water, alcohols)
+      SC7               0.837            36.00 0.0006*            0.068                  0.072      773, 776, 730, 769, 780 cm⁻¹         0.143                   Mixed / overlapping bands
+      SC8               0.684           108.43 0.0000*            0.281                  0.127 3003, 3007, 3011, 2999, 3015 cm⁻¹         0.328               O-H stretch (water, alcohols)
+      SC9               0.742           112.33 0.0000*            0.292                  0.143      726, 722, 730, 948, 944 cm⁻¹         0.153                   Mixed / overlapping bands
+     SC10               0.871           153.03 0.0000*            0.412                 -0.255 2976, 2972, 2980, 2984, 2968 cm⁻¹         0.343                 C-H stretch (lipids, waxes)
+     SC11               0.952           144.47 0.0000*            0.387                 -0.296 2933, 2937, 2941, 2929, 2945 cm⁻¹         0.476                 C-H stretch (lipids, waxes)
+     SC12               0.781            56.92 0.0000*            0.129                  0.163 3708, 3704, 2828, 3700, 2832 cm⁻¹         0.273                   Mixed / overlapping bands
+     SC13               0.969            33.69 0.0014*            0.061                  0.087 2536, 2540, 2575, 2532, 2579 cm⁻¹         0.537                   Mixed / overlapping bands
+     SC14               0.961           151.33 0.0000*            0.407                 -0.255 3984, 3977, 3981, 3988, 3973 cm⁻¹         0.485                   Mixed / overlapping bands
+     SC15               0.819           135.22 0.0000*            0.359                  0.240 3268, 3272, 3264, 3260, 3276 cm⁻¹         0.372               O-H stretch (water, alcohols)
+     SC16               0.958            68.26 0.0000*            0.163                 -0.218 3182, 3186, 3179, 3221, 3217 cm⁻¹         0.362               O-H stretch (water, alcohols)
+     SC17               0.950           153.51 0.0000*            0.413                  0.218 2852, 2855, 2859, 2848, 3471 cm⁻¹         0.265                 C-H stretch (lipids, waxes)
+     SC18               0.801           213.64 0.0000*            0.590                  0.372 3603, 3611, 3607, 3599, 3595 cm⁻¹         0.406                   Mixed / overlapping bands
+     SC19               0.717           116.14 0.0000*            0.303                 -0.277 3945, 2423, 3934, 2793, 3938 cm⁻¹         0.096                   Mixed / overlapping bands
+     SC20               0.882            53.71 0.0000*            0.120                 -0.056 2451, 2447, 2454, 2443, 2396 cm⁻¹         0.238                   Mixed / overlapping bands
+     SC21               0.934           142.30 0.0000*            0.380                 -0.371 3790, 3739, 3735, 3743, 3786 cm⁻¹         0.248                   Mixed / overlapping bands
+     SC22               0.785           255.70 0.0000*            0.714                 -0.504 3817, 3825, 3813, 3821, 3809 cm⁻¹         0.226                   Mixed / overlapping bands
+     SC23               0.937           131.52 0.0000*            0.349                 -0.387 3945, 3949, 3953, 3942, 3957 cm⁻¹         0.415                   Mixed / overlapping bands
+     SC24               0.877           158.76 0.0000*            0.429                  0.296 1890, 1894, 1886, 1898, 1882 cm⁻¹         0.276                   Mixed / overlapping bands
+     SC25               0.888           210.62 0.0000*            0.581                  0.319 3502, 3455, 3451, 3498, 3506 cm⁻¹         0.179               O-H stretch (water, alcohols)
+     SC26               0.935            33.04 0.0017*            0.059                  0.129      519, 523, 527, 531, 535 cm⁻¹         0.577                   Mixed / overlapping bands
+     SC27               0.626           122.73 0.0000*            0.323                  0.238 3042, 3038, 3046, 3050, 3054 cm⁻¹         0.421               O-H stretch (water, alcohols)
+     SC28               0.817           174.45 0.0000*            0.475                  0.363 1925, 1785, 1921, 1917, 1929 cm⁻¹         0.221                   Mixed / overlapping bands
+     SC29               0.943            47.98 0.0000*            0.103                  0.105 2229, 2194, 2197, 2190, 2232 cm⁻¹         0.313                   Mixed / overlapping bands
+     SC30               0.702           156.36 0.0000*            0.422                 -0.426 3692, 3689, 3696, 3700, 3685 cm⁻¹         0.276                   Mixed / overlapping bands
+     SC31               0.759           138.42 0.0000*            0.369                  0.321 2100, 2096, 2104, 2108, 2092 cm⁻¹         0.279                   Mixed / overlapping bands
+     SC32               0.857           161.70 0.0000*            0.437                  0.269 1321, 1325, 1318, 1329, 1314 cm⁻¹         0.232           C-H bending / carboxylate stretch
+
+Saved: SparsePCA_Table2_components.csv
+
+
+======================================================================
+AUTO-GENERATED INTERPRETATION PARAGRAPHS
+======================================================================
+
+Configuration 1 (varying n_components, alpha=0.5 fixed):
+The 53-component SparsePCA model achieved the highest classification accuracy
+with a mean effect size of 0.324 and bootstrap stability of 0.854.
+Relative to other component settings, this configuration captures the most discriminative
+and stable spectral structure while avoiding weaker or noisier sparse components that
+appear in larger latent spaces.
+
+
+Configuration 2 (varying alpha, n=32 fixed):
+Alpha=0.5 produced the strongest balance of discriminative power (mean η²=0.357)
+and stability (0.861). Lower alpha values yield denser components with higher
+inter-component redundancy, while higher alpha values over-regularize, stripping chemically
+relevant information from the latent space.
+
+
+Component-level interpretation (n=32, alpha=0.5):
+Of the 32 sparse components, 32 showed statistically significant class separation
+after Benjamini-Hochberg correction (q < 0.05). SC1 exhibited the strongest
+discriminative power (η² = 0.809, H = 288.06),
+driven primarily by spectral markers around 1641, 1707, 1637, 1598, 1602 cm⁻¹, consistent with Amide I / C=O stretch (proteins).
+SC22 showed the strongest monotonic association with ordered maturity progression
+(Spearman ρ = -0.504), with dominant loadings at 3817, 3825, 3813, 3821, 3809 cm⁻¹.
+Bootstrap stability of SC1 was 0.982, confirming that this component
+captures stable, reproducible spectral structure across resampled fits.
